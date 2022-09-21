@@ -15,6 +15,8 @@ jobs:
     outputs:
       image: ${{ steps.push-image.outputs.image }}
     steps:
+      - name: Change String Case
+        uses: ASzc/change-string-case-action@v2
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -29,4 +31,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/starslider/demo-app:${{ github.sha }}
+          tags: ghcr.io/${{ lowercase(github.repository_owner) }}/demo-app:${{ github.sha }}
