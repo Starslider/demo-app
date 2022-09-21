@@ -1,4 +1,4 @@
-package main
+package main 
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	myFigure := figure.NewColorFigure("starslider is Awesome!!!", "larry3d", "yellow", true)
+	myFigure := figure.NewColorFigure("starslider is awesome!!!", "larry3d", "yellow", true)
 
 	if secret := os.Getenv("SECRET"); secret != "" {
 		myFigure = figure.NewColorFigure(fmt.Sprintf("Secret value is: %s", secret), "larry3d", "yellow", true)
